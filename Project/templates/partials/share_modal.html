@@ -1,0 +1,19 @@
+<div id="modal">
+    <div id="shareModalBackground">
+    <input id='shareLinkInput' type='text' value='https://blog.tufankilinc.site{{ request.get_full_path }}' 
+        style="position: absolute !important; left: -100%;" />
+    </div>
+    <div id="shareModal">
+        <div class="backgroundImage" style="opacity: .2 !important;"></div>
+        <h1 style="width: 100%; margin: 1rem auto 2rem auto;">PAYLAS</h1>
+        <div id="socialShareLinks" style="margin-bottom: 1rem;">
+            <a href="" id="closeModal" style="font-size: 19px !important;"><i class="fas fa-times"></i></a>
+    
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.tufankilinc.site{{ request.get_full_path }}"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://twitter.com/intent/tweet?url=https://blog.tufankilinc.site{{ request.get_full_path }}&text="><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="http://www.tumblr.com/share?v=3&u=https://blog.tufankilinc.site{{ request.get_full_path }}&t="><i class="fab fa-tumblr"></i> Tumblr</a>
+            <a href="https://plus.google.com/share?url=https://blog.tufankilinc.site{{ request.get_full_path }}"><i class="fab fa-google-plus-g"></i> Google Plus</a>
+            <a href="" id="copyToClipBoardButton"><i class="far fa-clone"></i> Url'yi Kopyala</a>
+        </div>
+    </div>
+</div>

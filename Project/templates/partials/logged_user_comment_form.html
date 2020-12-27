@@ -1,0 +1,40 @@
+<form action="" name='comment-form-2' id='comment-form-2' method="POST">
+        {% csrf_token %}
+        <div class="input-field">
+          <label for="yazar">Adın: </label>
+          <input
+              type="text"
+              name="comment_owner_auth"
+              id="comment_owner"
+              value="{{ user.get_username }}"
+              disabled
+            />
+        </div>
+
+        <div class="input-field">
+          <label for="mail">Mail Adresin: </label>
+          <input
+              type="text"
+              name="comment_email_auth"
+              id="comment_email"
+              value="{{ user.email }}"
+              disabled
+            />
+          <span style="padding-top: 0.5rem"
+            ><small style="font-weight: 700; opacity: 0.7"
+              >Mail adresiniz yorumda paylaşılmayacaktır.</small
+            ></span
+          >
+        </div>
+
+        <div class="input-field">
+          <label for="yazi">Yorumun: </label>
+          {{ comment_form.comment }}
+        </div>
+
+        <div class="input-field">
+          <input type='submit' name='send_comment_2' id='send_comment_2' hidden></input>
+          <a href="javascript:;"
+          onclick="document.getElementById('send_comment_2').click();"><i class="fas fa-paper-plane"></i> Gönder</a>
+        </div>
+      </form>

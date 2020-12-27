@@ -1,0 +1,86 @@
+{% extends 'layout.html' %} {% load static %} 
+
+{% block metakeys %}
+  <meta name="description" content="Bilimden yazılıma ve yazılımdan herşeye dair bazı anektodlar.">
+  <meta name="keywords" content="Bilim, Yazılım, Programlama, Web Tasarım, Freelance">
+  <meta name="author" content="Tufan Kılınç">
+  <title>Demo Blog | Tufan Kılınç</title>
+{% endblock metakeys %}
+
+{% block content %}
+<div class="col-s12 col-m9 col-l10" style="overflow: hidden;" id="homepage">
+
+{% for post in posts %}{% if post %}
+
+  <div
+    class="content"
+  >
+    <h2 style="margin-top: 1rem">
+      <i class="far fa-bookmark"></i> {{ post.post_title|upper }}
+    </h2>
+    <span style="margin-left: 3px"
+      ><small style="font-weight: 600"
+        ><i class="fas fa-clock"></i> {{ post.created_at|timesince }} önce</small
+      ></span
+    >
+    <span style="margin-left: 3px"
+      ><small style="font-weight: 600"
+        ><i class="fas fa-user"></i> {{ post.post_author }} tarafından</small
+      ></span
+    >
+    <p>{{ post.post_content|safe|linebreaks|slice:':255' }}</p>
+
+    <div class="navigation">
+      <a href="{{ post.get_absolute_url }}" style="color: #212121"
+        ><i class="fas fa-book-reader"></i> Gönderiyi İncele</a
+      >
+      {% comment %} <a href="{{ post.get_absolute_url }}" class="redirectShareButton" style="color: #212121"><i class="fas fa-share"></i> Paylaş</a> {% endcomment %}
+    </div>
+  </div>
+{% endif %}{% endfor %}
+  
+  <div class="container">
+    <span class="step-links" style="font-weight: 700;">
+        {% if posts.has_previous %}
+            <a href="?sayfa=1" style="color: #212121;">&laquo; ilk</a>
+            <a href="?sayfa={{ posts.previous_page_number }}" style="color: #212121;">geri</a>
+        {% endif %}
+
+        <span class="current">
+            {{ posts.paginator.num_pages }} sayfadan {{ posts.number }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?sayfa={{ posts.next_page_number }}" style="color: #212121;">ileri</a>
+            <a href="?sayfa={{ posts.paginator.num_pages }}" style="color: #212121;">son &raquo;</a>
+        {% endif %}
+    </span>
+  </div>
+</div>
+{% endblock content %} 
+
+{% block sidebar %}
+<div class="col-s12 col-m3 col-l2 order-1 sidebar">
+<div class="container">
+  <ul>
+    <li style="font-weight: 900; font-size: 1.1rem">
+      <i class="fas fa-bullhorn"></i> DİKKAT DİKKAT!
+    </li>
+    <li>
+      <a href="https://www.tufankilinc.site"
+        >Freelance web yazılımcı olarak sizlere web tasarım hizmeti sunuyorum.
+        Detaylı bilgi almak ve portfolyomu incelemek için tıklayın.
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li style="font-weight: 900; font-size: 1.1rem">
+      <i class="fas fa-tag"></i> ETİKET BULUTU
+    </li>
+    {% for tag in top_tags %}
+    <li><a href="javascript:;" onclick="return false;"> {{ tag.tags }} </a></li>
+    {% endfor %} 
+  </ul>
+</div>
+</div>
+{% endblock sidebar %}

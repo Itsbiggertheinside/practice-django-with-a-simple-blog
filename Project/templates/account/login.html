@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+        <div class="row" style="justify-content: center; height: 100vh; align-items: center;">
+            <div class="col-s12 col-m4">
+                <div style="width: 100%; margin-bottom: 3rem;">
+                    <h2>YAZAR GIRISI</h2>
+                    <p>{{ form.errors }}</p>
+                </div>
+                <form action="" method="POST" style="font-size: 1.3rem;">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="input-field" style="font-weight: 600;">
+                        {{ field.label }}
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                    <div class="input-field" style="justify-content: space-between;">
+                        <input type="submit" name="login-input" id="login-input" hidden>
+                            <a href="javascript:;"
+                            onclick="document.getElementById('login-input').click();" style="margin-bottom: 1rem;">
+                                <i class="fas fa-lock-open"></i> Giriş Yap</i>
+                            </a>
+                        </input>
+                        <a href="" style="margin-bottom: 1rem;"><i class="fas fa-head-side-virus"></i> Şifremi Unuttum</a>
+                    </div>
+                    <div class="input-field" style="justify-content: space-between;">
+                        <a href="{% url 'home' %}" style="margin-bottom: 1rem;">ANASAYFAYA DÖN</i></a>
+                        <a href="{% url 'register' %}" style="margin-bottom: 1rem;">KAYIT OL</i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

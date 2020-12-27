@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar ul {
+    display: flex;
+}
+.navbar ul li {
+    display: inline-block;
+}
+.navbar ul li a {
+    color: #212121;
+    opacity: .8;
+    transition: all .4s;
+}
+.navbar ul li a:hover {
+    opacity: 1;
+}
+
+li {
+    list-style: none;
+    margin: 1rem 1.5rem 0 0;
+}
+a {
+    text-decoration: none;
+}
+
+.left {
+    justify-content: flex-start;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.input-field {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-bottom: 2rem;
+}
+.input-field label {
+    font-weight: 700;
+    margin-bottom: .8rem;
+}
+.input-field input {
+    width: 100%;
+    font-weight: 600;
+
+    line-height: 1.4rem;
+    padding: .3rem;
+
+    background-color: transparent;
+    border: unset;
+    border-bottom: 2px solid #212121;
+}
+.input-field input:focus {
+    outline: none;
+}
+.input-field textarea {
+    width: 100%;
+    font-weight: 600;
+
+    line-height: 1.4rem;
+    padding: .3rem;
+    background-color: transparent;
+}
+.input-field select {
+    width: 100%;
+    font-weight: 600;
+
+    line-height: 1.4rem;
+    padding: .3rem;
+
+    background-color: transparent;
+    border: unset;
+    border-bottom: 2px solid #212121;
+}
+.input-field a {
+    color: #212121;
+    font-weight: 700;
+    font-size: large;
+    opacity: .8;
+    transition: all .4s;
+    margin-right: 2rem;
+}
+.input-field a:hover {
+    opacity: 1;
+}
+
+.container {
+    width: 90% !important;
+    margin: 0 auto 0 auto !important;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.order-1 {
+    order: 1;
+}
+
+.order-2 {
+    order: 2;
+}
+
+.order-3 {
+    order: 3;
+}
+
+.order-4 {
+    order: 4;
+}
+
+.order-5 {
+    order: 5;
+}
+
+.order-6 {
+    order: 6;
+}
+
+@media screen and (min-width: 0) {   
+
+    html {
+        font-size: 12px;
+    }
+
+    .col-s1 {
+        padding: .3rem;
+        flex-basis: 8%;
+    }
+    .col-s2 {
+        padding: .3rem;
+        flex-basis: 16%;
+    }
+    .col-s3 {
+        padding: .3rem;
+        flex-basis: 25%;
+    }
+    .col-s4 {
+        padding: .3rem;
+        flex-basis: 33%;
+    }
+    .col-s5 {
+        padding: .3rem;
+        flex-basis: 41%;
+    }
+    .col-s6 {
+        padding: .3rem;
+        flex-basis: 50%;
+    }
+    .col-s7 {
+        padding: .3rem;
+        flex-basis: 58%;
+    }
+    .col-s8 {
+        padding: .3rem;
+        flex-basis: 66%;
+    }
+    .col-s9 {
+        padding: .3rem;
+        flex-basis: 75%;
+    }
+    .col-s10 {
+        padding: .3rem;
+        flex-basis: 83%;
+    }
+    .col-s11 {
+        padding: .3rem;
+        flex-basis: 91%;
+    }
+    .col-s12 {
+        padding: .3rem;
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    
+
+    html {
+        font-size: 16px;
+    }
+
+    .col-m1 {
+        padding: 1rem;
+        flex-basis: 8%;
+    }
+    .col-m2 {
+        padding: 1rem;
+        flex-basis: 16%;
+    }
+    .col-m3 {
+        padding: 1rem;
+        flex-basis: 25%;
+    }
+    .col-m4 {
+        padding: 1rem;
+        flex-basis: 33%;
+    }
+    .col-m5 {
+        padding: 1rem;
+        flex-basis: 41%;
+    }
+    .col-m6 {
+        padding: 1rem;
+        flex-basis: 50%;
+    }
+    .col-m7 {
+        padding: 1rem;
+        flex-basis: 58%;
+    }
+    .col-m8 {
+        padding: 1rem;
+        flex-basis: 66%;
+    }
+    .col-m9 {
+        padding: 1rem;
+        flex-basis: 75%;
+    }
+    .col-m10 {
+        padding: 1rem;
+        flex-basis: 83%;
+    }
+    .col-m11 {
+        padding: 1rem;
+        flex-basis: 91%;
+    }
+    .col-m12 {
+        padding: 1rem;
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (min-width: 1026px) {
+    .col-l1 {
+        padding: 1rem;
+        flex-basis: 8%;
+    }
+    .col-l2 {
+        padding: 1rem;
+        flex-basis: 16%;
+    }
+    .col-l3 {
+        padding: 1rem;
+        flex-basis: 25%;
+    }
+    .col-l4 {
+        padding: 1rem;
+        flex-basis: 33%;
+    }
+    .col-l5 {
+        padding: 1rem;
+        flex-basis: 41%;
+    }
+    .col-l6 {
+        padding: 1rem;
+        flex-basis: 50%;
+    }
+    .col-l7 {
+        padding: 1rem;
+        flex-basis: 58%;
+    }
+    .col-l8 {
+        padding: 1rem;
+        flex-basis: 66%;
+    }
+    .col-l9 {
+        padding: 1rem;
+        flex-basis: 75%;
+    }
+    .col-l10 {
+        padding: 1rem;
+        flex-basis: 83%;
+    }
+    .col-l11 {
+        padding: 1rem;
+        flex-basis: 91%;
+    }
+    .col-l12 {
+        padding: 1rem;
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="justify-content: center; height: 100vh; align-items: center;">
+            <div class="col-s12 col-m4">
+                <div style="width: 100%; margin-bottom: 3rem;">
+                    <h2>YAZAR KAYIT</h2>
+                </div>
+                <form action="" method="POST" style="font-size: 1.3rem;">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="input-field" style="font-weight: 600;">
+                        {{ field.label }}
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                    <div class="input-field" style="justify-content: flex-end;">
+                        <input type="submit" name="kayit" id="kayit" hidden>
+                            <a href="javascript:;"
+                            onclick="document.getElementById('kayit').click();" style="margin-bottom: 1rem;">
+                                <i class="fas fa-check"></i> KAYDI TAMAMLA</i>
+                            </a>
+                        </input>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

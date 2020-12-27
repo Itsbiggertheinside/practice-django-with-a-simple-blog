@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block metakeys %}
+  <meta name="description" content="Blog üzerinde arama yap">
+  <meta name="keywords" content="Blog, Arama, Yazılım, Bilim, Programlama">
+  <meta name="author" content="Tufan kılınç">
+  <title>Demo Blog | Arama Yap</title>
+{% endblock metakeys %}
+
+{% block styles %}
+    #search-page-photo {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -3;
+    }
+
+    @media screen and (max-width: 900px) {
+        #search-page-photo {
+            width: 300px;
+            height: auto;
+            opacity: .7;
+        }
+    }
+{% endblock styles %}
+
+{% block content %}
+
+    <div class="container" style="margin: 5rem auto 5rem auto !important;">
+        <div class="row" style="">
+            <div class="col-s12 col-m6">
+                <form action="" method="GET" name="q">
+                    <div class="input-field" style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <label for="search">Aranan terim: </label>
+                        <input type="text" id="query" name="query" />
+                        <a href="javascript:;" style="color: #212121; margin-top: 3rem;"
+                            onclick="document.getElementById('search_button').click();">
+                            <input type="submit" name="search_button" id="search_button" hidden /><i class="fas fa-search"></i> Ara
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-s12 col-m8">
+                {% if posts_after_search %}
+                    {% for post in posts_after_search %}
+                        <p>- <a href="{{ post.get_absolute_url }}" style="color: #212121;">{{ post.post_title }}</a></p>
+                    {% endfor %}
+                {% else %}
+                    {% if '?query=' in request.get_full_path %}
+                    <p>Sonuç bulunamadı</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <img src="{% static 'img/search-page-photo.png' %}" id='search-page-photo' />
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+{% load static %}
+<head>
+    {% block metakeys %}
+
+    {% endblock metakeys %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+    <script src="https://kit.fontawesome.com/7dfb9f727c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/stylelibrary.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        {% block styles %}
+        {% endblock styles %}
+    </style>
+</head>
+<body>
+    <div class='backgroundImage'></div>
+
+    <header>
+        {% include 'partials/navbar.html' %}
+        {% include 'partials/latest.html' %}
+    </header>
+    
+    <main>
+        <div class="row">
+            {% block content %}
+            {% endblock content %}
+
+            {% include 'partials/share_modal.html' %}
+            
+            {% block sidebar %}
+            {% endblock sidebar %}
+        </div>
+    </main>
+
+    <footer>
+        {% include 'partials/footer.html' %}
+    </footer>
+
+    <script src='{% static 'js/main.js' %}'></script>
+</body>
+</html>

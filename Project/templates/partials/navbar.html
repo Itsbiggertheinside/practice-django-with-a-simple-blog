@@ -1,0 +1,15 @@
+{% load static %}
+
+<nav class="navbar">
+    <ul class="right">
+        <li><a href="{% url 'home' %}">KESFET</a></li>
+        <li><a href="{% url 'search' %}">ARAMA YAP</a></li>
+        {% if not user.is_authenticated %}
+        <li><a href="{% url 'login' %}">YAZAR GIRISI</a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'post_write' %}">KARALA</a></li>
+        <li><a href="{% url 'profile' %}">PROFIL</a></li>
+        {% endif %}
+    </ul>
+</nav>
